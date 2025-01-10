@@ -1,0 +1,73 @@
+// define the variables you want so shinobi can use it the variable name should be the same with variables names in shinobi
+
+@use "./shinobi/variables"with(
+  $primary:yellow
+);
+
+@use "./shinobi/breakpoints" as bp;
+
+@use "./shinobi" as shinobi;
+
+// ** for project **
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --orange: #ff8139;
+  --pink: #ff3998;
+  --green: #39ffa0;
+  --red: #ff3939;
+  --light-green: #edfff6;
+  --light-orange: #fff0e8;
+  --accent-color1: #ffffff;
+  --accent-color2: #555555;
+  --accent-color3: #cccccc;
+  --card-color: #000000;
+  --background: #111111;
+  --font-family: "Inter", sans-serif;
+}
+
+[data-theme="light"] {
+  --background: #ffffff;
+  --accent-color1: #000000;
+  --accent-color2: #eeeeee;
+  --accent-color3: #777777;
+  --card-color: #eeeeee;
+}
+
+
+
+
+
+.app-container {
+  background-color: var(--background);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  transition: 0.5s ease-in-out;
+  padding: 2rem 4rem;
+
+  @include bp.breakpoint-between(280px,700px){
+    padding: 0;
+  }
+}
+
+// @media only screen and (min-device-width: 280px) and (max-device-width: 1080px) {
+//   .app-container::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
+
+// 
+
+::-webkit-scrollbar {
+  background-color: #111111;
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--orange);
+}
+
+
+.border-red{
+  border: 1px solid red;
+}

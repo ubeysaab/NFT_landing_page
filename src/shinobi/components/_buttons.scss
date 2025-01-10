@@ -1,0 +1,17 @@
+@use "../variables";
+
+
+// ! To avoid duplicating code in the classes below we creating a mixin 
+
+@mixin btn($bgColor : #ddd){
+  // if we don't give argument to the mixing the default we'll be #ddd
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: variables.$base-padding variables.$base-padding * 2;
+  border-radius: variables.$base-border-radius;
+  background-color: $bgColor;
+}
+
+

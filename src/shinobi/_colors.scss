@@ -1,0 +1,30 @@
+// @use "sass:color";
+// @use "variables";
+
+// @each $key, $val in variables.$colors {
+//   .text-#{$key} {
+//     color: $val;
+
+
+//     .bg-#{$key} {
+//       background-color: $val;
+//     }
+//   }
+
+
+//   // for each color we will create light and dark from 1 to 9
+//   @if($val !=white and $val !=black) {
+//     @for $i from 1 through 9 {
+//       .bg-#{$key}-light-#{$i} {
+//         // if we change the order of white and val the lightest will be 1 instead of 9
+//         // the order if the white first is incremently if the white is 2nd is decremently
+//         background-color: color.mix(white, $val , $i*10%);
+//         // background-color: lighten($val, $i * 5%);
+//       }
+
+//       .bg-#{$key}-dark-#{$i} {
+//         background-color: color.mix(black, $val, $i * 10%);
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,31 @@
+@use "../variables";
+
+@use "sass:math";
+  // selector looking for the class .card
+.card{
+  display: block;
+  padding:variables.$base-padding;
+  border: variables.$base-border-thickness solid #ddd;
+  box-shadow: variables.$base-box-shadow;
+  border-radius: math.div(variables.$base-border-radius,4);
+
+  .card-title{
+    font-size: variables.$font-size-l;
+    padding-bottom: variables.$base-padding;
+    font-weight: bold;
+  }
+
+  .card-body{
+  text-indent: 20px;
+
+    font-size: variables.$base-font-size;
+
+    a{
+      text-decoration: underline;
+      color: variables.$secondary;
+    }
+  }
+}
+
+
+// @debug "this line from card component:" math.div($base-border-radius,4);
