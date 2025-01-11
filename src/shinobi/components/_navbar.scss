@@ -1,33 +1,78 @@
 @use "../variables";
+@use "../breakpoints" as bp;
 
 %flex-layout {
   display: flex;
-  align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
+  align-items: space-between
 }
 
 .navbar {
   @extend %flex-layout;
 
+  .brand {
+    height: 20px;
+  }
+
+  .toggle-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+
+    .mode {
+      font-size: 2rem;
+      position: relative;
+      z-index: 2999;
+    }
+
+    .toggle {
+      font-size: 2rem;
+      position: relative;
+      z-index: 2999;
+
+      @include bp.lg {
+        display: none;
+      }
+    }
+
+    .links-container {
+      position: absolute;
+      right: -22200px;
+
+      .links>li>a {
+        color: white;
+      }
+
+      &--open {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: 5rem;
+        background-color: var(--accent-color2);
+
+        .links>li>a {
+          color: white;
+        }
+
+
+      }
+
+      @include bp.lg {
+        flex-grow: 1;
+        position: static;
+
+        .links {
+          display: flex;
+          justify-content: space-evenly;
+        }
+
+      }
+    }
+
+    @include bp.lg {
+      flex-basis: 60%;
+    }
+  }
 }
-
-
-// @each $key, $val in variables.$colors {
-//   .navbar-#{$key} {
-//     @extend .navbar;
-//     background-color: $val;
-//   }
-// }
-
-  // box-shadow: variables.$base-box-shadow;
-
-
-  // .site-title {
-  //   font-size: variables.$font-size-l;
-  // }
-
-  // // ! we can change the properties of container when it is inside a navbar without change properties of container it self which is not gonna effect any container that sit outside the navbar
-  // .container {
-  //   @extend%flex-layout;
-  // }
