@@ -1,8 +1,6 @@
 // define the variables you want so shinobi can use it the variable name should be the same with variables names in shinobi
 
-@use "./shinobi/variables"with(
-  $primary:yellow
-);
+@use "./shinobi/variables" with ($primary: yellow);
 
 @use "./shinobi/breakpoints" as bp;
 
@@ -11,6 +9,7 @@
 // ** for project **
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   --orange: #ff8139;
   --pink: #ff3998;
@@ -34,7 +33,7 @@
   --card-color: #eeeeee;
 }
 
-body{
+body {
   color: white;
 
 }
@@ -48,7 +47,7 @@ body{
   transition: 0.5s ease-in-out;
   padding: 2rem 4rem;
 
-  @include bp.breakpoint-between(280px,700px){
+  @include bp.breakpoint-between(280px, 700px) {
     padding: 1rem;
   }
 }
@@ -71,6 +70,51 @@ body{
 }
 
 
-.border-red{
+.border-red {
   border: 1px solid red;
+}
+
+
+.home {
+  gap: 20px;
+  width: 100vw;
+
+  .content {
+    flex-basis: 80%;
+
+  }
+
+  .subtitle {
+    color: var(--pink);
+    letter-spacing: 2px;
+    line-height: 28px;
+
+  }
+
+  .title,
+  .description {
+    // overflow-wrap: break-word;
+    // word-wrap: break-word;
+    // hyphens: auto;
+    // white-space: pre-line;
+    // text-wrap-mode: wrap;
+    text-wrap: pretty;
+  }
+
+  .button {
+    // // border-radius:7vw;
+    padding: 10px 25px;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    // border-image-slice:1;
+    border-image-source: linear-gradient(117deg, rgba(255, 57, 152, 1) 42%, rgba(255, 129, 57, 1) 43%);
+
+    &:hover {
+      background-image: linear-gradient(117deg, rgba(255, 57, 152, 1), rgba(255, 129, 57, 1));
+    }
+
+
+  }
+
 }

@@ -1,0 +1,6 @@
+@use "../mixins" as mixins;
+.home{
+  
+  @include mixins.flex-between-center();
+  
+}

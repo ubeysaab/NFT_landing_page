@@ -23,6 +23,7 @@
 @use "components/card";
 @use "components/buttons";
 @use "components/navbar";
+@use "./components/homeSection";
 
 //5. Utilities : (margin,padding,border,opacity) classes
-@use "utilities"
+@use "utilities";

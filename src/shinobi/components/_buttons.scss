@@ -1,17 +1,57 @@
 @use "../variables";
 
 
-// ! To avoid duplicating code in the classes below we creating a mixin 
 
-@mixin btn($bgColor : #ddd){
+%btn{
   // if we don't give argument to the mixing the default we'll be #ddd
+  border:none;
+  outline: none;
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
   border: 0;
   padding: variables.$base-padding variables.$base-padding * 2;
-  border-radius: variables.$base-border-radius;
-  background-color: $bgColor;
+
 }
 
+
+
+.button {
+  @extend %btn;
+
+  
+
+
+  &--lg{
+    padding: 30px;
+  }
+
+  &--warning{
+    color: #FBBF24;
+    background-color: #FFFBEB;
+    border: 2px solid #FBBF24;
+  }
+
+  &--danger{
+    color: #F87171;
+    background-color: #FEF2F2;
+    border: 2px solid #f87171;
+
+  }
+
+  &--success{
+    color: #047857;
+    background-color: #ECFDF5;
+    border: 2px solid #047857;
+
+  }
+
+  &--circle{
+    border-radius: 50%;
+  }
+  &--radius{
+    border-radius: variables.$base-border-radius;
+
+  }
+}
 

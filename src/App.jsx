@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import Like from "./components/Like"
 import SignUp from "./components/SignUp"
 import Release from "./components/Release"
+
 import './App.scss'
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
     <div className='app-container'>
         {/* <ScrolToTop/> */}
         <Navbar/>
-        {/* <Home/>
+        <Home/>
+        {/* 
         <Free/>
         <Clients/>
         <SuperRare/>
