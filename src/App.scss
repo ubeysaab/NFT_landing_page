@@ -3,7 +3,7 @@
 @use "./shinobi/variables" with ($primary: yellow);
 
 @use "./shinobi/breakpoints" as bp;
-
+@use "./shinobi/mixins" as mxns;
 @use "./shinobi" as shinobi;
 
 // ** for project **
@@ -104,15 +104,9 @@ body {
   .button {
     // // border-radius:7vw;
     padding: 10px 25px;
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 5px;
-    // border-image-slice:1;
-    border-image-source: linear-gradient(117deg, rgba(255, 57, 152, 1) 42%, rgba(255, 129, 57, 1) 43%);
 
-    &:hover {
-      background-image: linear-gradient(117deg, rgba(255, 57, 152, 1), rgba(255, 129, 57, 1));
-    }
+    border-radius: 200px;
+    @include mxns.gradient-button-with-gradient-border(var(--pink),var(--orange),var(--background),var(--accent-color1))
 
 
   }

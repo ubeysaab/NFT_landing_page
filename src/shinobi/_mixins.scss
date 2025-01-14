@@ -4,3 +4,32 @@ flex-direction: $direction;
 justify-content: space-between;
 align-items: center;
 }
+
+
+@mixin gradient-button-with-gradient-border($firstColor,$secondColor,$backGroundColor,$fontColor,$borderWidth:2px){
+  border: $borderWidth solid transparent;
+  color: $fontColor;
+  background-color:$backGroundColor;
+  background-image: linear-gradient(rgba(255, 255, 255, 0),
+  rgba(255, 255, 255, 0),
+
+  rgba(255, 255, 255, 0),
+
+
+),
+linear-gradient(101deg, $firstColor, $secondColor);
+background-origin: border-box;
+background-clip: content-box,border-box;
+box-shadow:0 10000px 1px $backGroundColor inset;
+
+&:hover {
+  box-shadow: none;
+}
+
+}
+
+
+@mixin gradient-border($firstColor,$secondColor) {
+  border-image-slice:1;
+    border-image-source: linear-gradient(117deg, $firstColor, $secondColor );
+}
