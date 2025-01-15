@@ -4,7 +4,13 @@ flex-direction: $direction;
 justify-content: space-between;
 align-items: center;
 }
-
+@mixin flex-evenly-center($direction:'row'){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-evenly;
+  align-items: center;
+  }
+  
 
 @mixin gradient-button-with-gradient-border($firstColor,$secondColor,$backGroundColor,$fontColor,$borderWidth:2px){
   border: $borderWidth solid transparent;
@@ -32,4 +38,16 @@ box-shadow:0 10000px 1px $backGroundColor inset;
 @mixin gradient-border($firstColor,$secondColor) {
   border-image-slice:1;
     border-image-source: linear-gradient(117deg, $firstColor, $secondColor );
+}
+
+
+@mixin specific-scrollbar($backGroundColor,$thumbBackGroundColor){
+  ::-webkit-scrollbar {
+    background-color: $backGroundColor;
+    width: 0.3rem;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: $thumbBackGroundColor;
+  }
 }

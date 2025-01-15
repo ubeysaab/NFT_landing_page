@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ScrolToTop from "./components/ScrollToTop"
 import Navbar from "./components/Navbar"
 import Home from "./components/Home"
+import Card from "./components/Card"
 import Free from "./components/Free"
 import Clients from "./components/Clients"
 import SuperRare from "./components/SuperRare"
@@ -19,7 +20,8 @@ function App() {
     <div className='app-container'>
         {/* <ScrolToTop/> */}
         <Navbar/>
-        <Home/>
+        {/* <Home/> */}
+        <Card/>
         {/* 
         <Free/>
         <Clients/>

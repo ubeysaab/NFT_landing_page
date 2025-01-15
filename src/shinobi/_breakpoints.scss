@@ -5,6 +5,7 @@ $breakpoints: (
   "md":720px,
   "lg":960px,
   "xl":1200px,
+  'xxl':1400px,
 );
 
 // We go mobile first 
@@ -52,6 +53,12 @@ $breakpoints: (
 }
 
 ;
+
+@mixin xxl {
+  @media (min-width:map.get($breakpoints,'xxl')) {
+    @content;
+  }
+}
 
 // mixin for the breakpoint that we don't have in our map 
 

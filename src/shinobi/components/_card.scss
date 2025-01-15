@@ -1,31 +1,50 @@
 @use "../variables";
 
-@use "sass:math";
-  // selector looking for the class .card
-.card{
-  display: block;
-  padding:variables.$base-padding;
-  border: variables.$base-border-thickness solid #ddd;
-  box-shadow: variables.$base-box-shadow;
-  border-radius: math.div(variables.$base-border-radius,4);
+.nft-card{
+  font-size: 12px;
+  margin-top: 2rem;
+  height: 300px;
+  width: 200px;
+  border-radius: 12px;
+  border: 1px solid gray;
 
-  .card-title{
-    font-size: variables.$font-size-l;
-    padding-bottom: variables.$base-padding;
-    font-weight: bold;
-  }
 
-  .card-body{
-  text-indent: 20px;
-
-    font-size: variables.$base-font-size;
-
-    a{
-      text-decoration: underline;
-      color: variables.$secondary;
+  .img{
+    height: 70%;
+    width:100%;
+    
+    img{
+      // max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
     }
   }
+  .content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30%;
+    padding: 10px;
+
+    b{
+      line-height: 2rem;
+      position: relative;
+      .icon{
+        position: absolute;
+        width: 14px;
+        height: 24px;
+        left: -20px;
+        display: inline;
+      }
+    }
+
+
+  }
+
+  .series {
+    color: var(--orange);
+  }
+
+  
 }
-
-
-// @debug "this line from card component:" math.div($base-border-radius,4);

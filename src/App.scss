@@ -60,14 +60,7 @@ body {
 
 // 
 
-::-webkit-scrollbar {
-  background-color: #111111;
-  width: 0.2rem;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--orange);
-}
+@include mxns.specific-scrollbar(#111,var(--orange));
 
 
 .border-red {
@@ -76,13 +69,16 @@ body {
 
 
 .home {
+  margin-block: 6rem;
   gap: 20px;
   width: 100vw;
 
+
   .content {
     flex-basis: 80%;
+  
 
-  }
+
 
   .subtitle {
     color: var(--pink);
@@ -110,5 +106,44 @@ body {
 
 
   }
+  }
 
+  .image{
+    padding: rem;
+    position: relative;
+    z-index: 10;
+    @include bp.lg{
+      margin-right: 30rem;
+
+    }
+   
+    &::before{
+      content: "";
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      z-index: -1;
+      top: 40;
+      bottom: 0;
+      filter: blur(120px);
+      left: 0;
+      background-color: var(--pink);
+    }
+
+
+
+    &::after{
+      content: "";
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 40;
+      right: 0;
+      filter: blur(120px);
+
+      background-color: var(--orange);
+    }
+  }
 }

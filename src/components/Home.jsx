@@ -3,7 +3,7 @@ import Button from './Button'
 import homeImg from '../assets/home.png'
 function Home() {
   return (
-    <section className="home mt-4">
+    <section className="home">
        <div className="content">
           <p className="subtitle">
             LAUNCHING SOON
